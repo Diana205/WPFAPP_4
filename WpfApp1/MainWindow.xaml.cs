@@ -183,5 +183,35 @@ namespace WpfApp1
             list1.Items.Add("Дан массив из K чисел.\n Сколько элементов массива меньше своих «соседей»,\n т.е. предыдущего и последующего. Первый\n и последний элементы массива считаются соседними,\n т.е. массив представляет из себя кольцевой список.");
             list1.Items.Add("Ответ:" + kol);
         }
+        private void kn_4_Click(object sender, RoutedEventArgs e)
+        {
+            //4
+            Gena();
+            int itemCount = Convert.ToInt32(text1.Text);
+            int kol = 0;
+            int a = itemCount - 1;
+            for (i = 1; i < a; i++)
+            {
+                if (((int)myAL[i] > (int)myAL[i - 1]) && ((int)myAL[i] < (int)myAL[i + 1]))
+                {
+                    kol++;
+                }
+                if (((int)myAL[i] < (int)myAL[i - 1]) && ((int)myAL[i] > (int)myAL[i + 1]))
+                {
+                    kol++;
+                }
+            }
+            if (((int)myAL[0] < (int)myAL[1]) && ((int)myAL[0] < (int)myAL[2]))
+                kol++;
+            if (((int)myAL[0] > (int)myAL[1]) && ((int)myAL[0] > (int)myAL[2]))
+                kol++;
+
+            if ((int)myAL[itemCount - 2] >= (int)myAL[itemCount - 1] && (int)myAL[itemCount - 2] <= (int)myAL[itemCount - 3])
+                kol++;
+            if ((int)myAL[itemCount - 2] <= (int)myAL[itemCount - 1] && (int)myAL[itemCount - 2] >= (int)myAL[itemCount - 3])
+                kol++;
+            list1.Items.Add("Дан массив из K чисел. Сколько элементов \nмассива составляют со своими соседями \nупорядоченную последовательность. Первый и \nпоследний элементы массива считаются \nсоседними.");
+            list1.Items.Add("Ответ:" + kol);
+        }
     }
 }
