@@ -32,10 +32,10 @@ namespace WpfApp1
         int number;
         int i;
         ArrayList myAL = new ArrayList();
-       
+
         void Gena()
         {
-        try
+            try
             {
                 int itemCount = Convert.ToInt32(text1.Text);
                 if (itemCount > 0)
@@ -61,12 +61,12 @@ namespace WpfApp1
             {
                 MessageBox.Show("Введите число!!!");
             }
-}
+        }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Gena();
         }
-        
+
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             try
@@ -129,7 +129,7 @@ namespace WpfApp1
             //1
             try
             {
-            int itemCount = Convert.ToInt32(text1.Text);
+                int itemCount = Convert.ToInt32(text1.Text);
                 if (itemCount > 0)
                 {
                     Random rnd1 = new Random();
@@ -155,7 +155,7 @@ namespace WpfApp1
             }
         }
 
-        
+
         private void Button_Click_10(object sender, RoutedEventArgs e)
         {
             AboutBox1 r = new AboutBox1();
@@ -212,6 +212,45 @@ namespace WpfApp1
                 kol++;
             list1.Items.Add("Дан массив из K чисел. Сколько элементов \nмассива составляют со своими соседями \nупорядоченную последовательность. Первый и \nпоследний элементы массива считаются \nсоседними.");
             list1.Items.Add("Ответ:" + kol);
+        }
+
+        private void kn_5_Click(object sender, RoutedEventArgs e)
+        {
+            //5
+            list1.Items.Add("Дан массив из K чисел. Замените элементы \nмассива таким образом, чтобы элементы составляли со \nсвоими соседями упорядоченную последовательность. \nНаправления последовательности могут меняться.");
+            Gena();
+            int itemCount = Convert.ToInt32(text1.Text);
+
+            int a = itemCount - 1;
+            for (i = 1; i < a; i++)
+            {
+                if ((((int)myAL[i] > (int)myAL[i - 1]) && ((int)myAL[i] < (int)myAL[i + 1])) || (((int)myAL[i] < (int)myAL[i - 1]) && ((int)myAL[i] > (int)myAL[i + 1])))
+                {
+                    if ((int)myAL[i - 1] < (int)myAL[i + 1])
+                    {
+                        int t;
+                        t = (int)myAL[i];
+                        myAL[i] = (int)myAL[i - 1];
+                        myAL[i - 1] = t;
+                    }
+                    if ((int)myAL[i - 1] > (int)myAL[i + 1])
+                    {
+                        int t;
+                        t = (int)myAL[i];
+                        myAL[i] = (int)myAL[i + 1];
+                        myAL[i + 1] = t;
+                    }
+                }
+                list1.Items.Add("Измененный массив");
+                for (i = 0; i < itemCount; i++)
+                    list1.Items.Add(myAL[i]);
+                MessageBox.Show("Гистограмма изменится");
+                valueList.Clear();
+                for (int i = 0; i < itemCount; i++)
+                {
+                    valueList.Add(new KeyValuePair<string, int>("", (int)myAL[i]));
+                }
+            }
         }
     }
 }
