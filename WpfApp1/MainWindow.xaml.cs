@@ -223,5 +223,7 @@ namespace WpfApp1
             }
             list1.Items.Add("Ответ: " + (j + 1));
         }
+
+       
     }
 }

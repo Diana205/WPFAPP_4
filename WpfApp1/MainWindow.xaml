@@ -23,5 +23,6 @@
         <Button Content="Информация" HorizontalAlignment="Left" Height="29" Margin="38,265,0,0" VerticalAlignment="Top" Width="133" Click="Button_Click_10"/>
         <Button x:Name="kn_2" Content="№2" HorizontalAlignment="Left" Height="38" Margin="83,584,0,0" VerticalAlignment="Top" Width="124" Click="Button_Click_5" />
         <Button x:Name="kn_3" Content="№3" HorizontalAlignment="Left" Height="38" Margin="244,503,0,0" VerticalAlignment="Top" Width="124" Click="kn_3_Click" />
+        <Button x:Name="kn_4" Content="№4" HorizontalAlignment="Left" Height="38" Margin="244,589,0,0" VerticalAlignment="Top" Width="124" Click="kn_4_Click"/>
     </Grid>
 </Window>
