@@ -29,11 +29,6 @@ namespace WpfApp1
             ColumnChart.DataContext = valueList;
             rn.IsEnabled = false;
             kn_1.IsEnabled = false;
-            kn_2.IsEnabled = false;
-            kn_3.IsEnabled = false;
-            kn_4.IsEnabled = false;
-            kn_5.IsEnabled = false;
-            kn_6.IsEnabled = false;
         }
         //int[] number = new int[5];
         int number;
@@ -62,11 +57,6 @@ namespace WpfApp1
                     }
                     rn.IsEnabled = true;
                     kn_1.IsEnabled = true;
-                    kn_2.IsEnabled = true;
-                    kn_3.IsEnabled = true;
-                    kn_4.IsEnabled = true;
-                    kn_5.IsEnabled = true;
-                    kn_6.IsEnabled = true;
                 }
                 else MessageBox.Show("Введите целое число больше нуля!");
             }
