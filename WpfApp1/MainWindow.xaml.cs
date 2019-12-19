@@ -27,14 +27,12 @@ namespace WpfApp1
         {
             InitializeComponent();
             ColumnChart.DataContext = valueList;
-            rn.IsEnabled = false;
-            kn_1.IsEnabled = false;
         }
         //int[] number = new int[5];
         int number;
         int i;
         ArrayList myAL = new ArrayList();
-        public int key;
+       
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -50,13 +48,7 @@ namespace WpfApp1
                         myAL.Add(number);
                         list1.Items.Add(number);
                     }
-                    valueList.Clear();
-                    for (int i = 0; i < itemCount; i++)
-                    {
-                        valueList.Add(new KeyValuePair<string, int>("", (int)myAL[i]));
-                    }
-                    rn.IsEnabled = true;
-                    kn_1.IsEnabled = true;
+                    
                 }
                 else MessageBox.Show("Введите целое число больше нуля!");
             }
@@ -137,52 +129,36 @@ namespace WpfApp1
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
             //1
-            int itemCount = Convert.ToInt32(text1.Text);
-            int kol = 0;
-            int a = itemCount - 1;
-            for (i = 1; i < a; i++)
+            
+            try
             {
-                if (((int)myAL[i] > (int)myAL[i - 1]) && ((int)myAL[i] > (int)myAL[i + 1]))
-                {
-                    kol++;
-                }
-            }
-            if ((int)myAL[0] < (int)myAL[1] && (int)myAL[0] < (int)myAL[itemCount - 1])
-                kol++;
-            if ((int)myAL[itemCount - 1] < (int)myAL[0] && (int)myAL[itemCount - 1] < (int)myAL[itemCount - 2])
-                kol++;
-            list1.Items.Add("Дан массив из K чисел.\n Сколько элементов массива меньше своих «соседей»,\n т.е. предыдущего и последующего. Первый\n и последний элементы массива считаются соседними,\n т.е. массив представляет из себя кольцевой список.");
-            list1.Items.Add("Ответ:" + kol);
-        }
-
-        private void Button_Click_5(object sender, RoutedEventArgs e)
-        {
-        //2
             int itemCount = Convert.ToInt32(text1.Text);
-          
-            list1.Items.Add("Для массива из K чисел найти номер \nсамого малого по значению элемента, \nзначение которого больше среднего значения\n элементов массива.");
-                    
-                int sum = 0;
-                for (i = 0; i < itemCount; i++)
+                if (itemCount > 0)
                 {
-                    sum += (int)myAL[i];
-                }
-                float sr = 0;
-                
-                float min = -101;
-                sr = (float)sum / (float)itemCount;
-                for (i = 0; i < itemCount; i++)
-                {
-                    if ((int)myAL[i] > sr)
+                    Random rnd1 = new Random();
+                    list1.Items.Clear();
+                    myAL.Clear();
+                    for (i = 1; i <= itemCount; i++)
                     {
-                        if ((int)myAL[i] < min)
-                        {
-                            min = (int)myAL[i];
-                        }
+                        number = -100 + rnd1.Next(200);
+                        myAL.Add(number);
+                        list1.Items.Add(number);
+                    }
+                    valueList.Clear();
+                    for (int i = 0; i < itemCount; i++)
+                    {
+                        valueList.Add(new KeyValuePair<string, int>("", (int)myAL[i]));
                     }
                 }
-            list1.Items.Add("Ответ:" + i);
+                else MessageBox.Show("Введите целое число больше нуля!");
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Введите число!!!");
+            }
+           
         }
+
         
         private void Button_Click_10(object sender, RoutedEventArgs e)
         {
