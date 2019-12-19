@@ -183,5 +183,45 @@ namespace WpfApp1
             list1.Items.Add("Дан массив из K чисел.\n Сколько элементов массива меньше своих «соседей»,\n т.е. предыдущего и последующего. Первый\n и последний элементы массива считаются соседними,\n т.е. массив представляет из себя кольцевой список.");
             list1.Items.Add("Ответ:" + kol);
         }
+
+        private void kn_3_Click(object sender, RoutedEventArgs e)
+        {
+            //3
+            Gena();
+            int itemCount = Convert.ToInt32(text1.Text);
+
+            list1.Items.Add("Для массива из K чисел найти номер \nсамого малого по значению элемента, \nзначение которого больше среднего значения\n элементов массива.");
+
+            int sum = 0;
+            for (i = 0; i < itemCount; i++)
+            {
+                sum += (int)myAL[i];
+            }
+            float sr = 0;
+            int j = 0;
+            float min = (int)myAL[0];
+            sr = (float)sum / (float)itemCount;
+         
+            while(min<sr)
+            {
+                min = (int)myAL[j];
+                j++;
+            }
+            j = 0;
+            for (i = 0; i < itemCount; i++)
+            {
+                if ((int)myAL[i] > sr)
+                {
+                    if ((int)myAL[i] < min)
+                    {
+                        min = (int)myAL[i];
+                        j = i;
+                        
+                    }
+                }
+                
+            }
+            list1.Items.Add("Ответ: " + (j + 1));
+        }
     }
 }
