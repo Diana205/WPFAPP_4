@@ -33,22 +33,27 @@ namespace WpfApp1
         int i;
         ArrayList myAL = new ArrayList();
        
-        private void Button_Click(object sender, RoutedEventArgs e)
+        void Gena()
         {
-            try
+        try
             {
                 int itemCount = Convert.ToInt32(text1.Text);
                 if (itemCount > 0)
                 {
                     Random rnd1 = new Random();
                     list1.Items.Clear();
+                    myAL.Clear();
                     for (i = 1; i <= itemCount; i++)
                     {
                         number = -100 + rnd1.Next(200);
                         myAL.Add(number);
                         list1.Items.Add(number);
                     }
-                    
+                    valueList.Clear();
+                    for (int i = 0; i < itemCount; i++)
+                    {
+                        valueList.Add(new KeyValuePair<string, int>("", (int)myAL[i]));
+                    }
                 }
                 else MessageBox.Show("Введите целое число больше нуля!");
             }
@@ -56,20 +61,12 @@ namespace WpfApp1
             {
                 MessageBox.Show("Введите число!!!");
             }
-            
+}
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Gena();
         }
         
-        private void text1_TextChanged_1(object sender, TextChangedEventArgs e)
-        {
-            try
-            {
-                Convert.ToInt32(text1.Text);
-            }
-            catch
-            {
-                MessageBox.Show("Большие числа нельзя!!!");
-            }
-        }
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             try
@@ -100,6 +97,7 @@ namespace WpfApp1
             {
                 MessageBox.Show("Введите число!!!");
             }
+
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
@@ -129,7 +127,6 @@ namespace WpfApp1
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
             //1
-            
             try
             {
             int itemCount = Convert.ToInt32(text1.Text);
@@ -156,7 +153,6 @@ namespace WpfApp1
             {
                 MessageBox.Show("Введите число!!!");
             }
-           
         }
 
         
@@ -166,5 +162,26 @@ namespace WpfApp1
             r.ShowDialog();
         }
 
+        private void Button_Click_5(object sender, RoutedEventArgs e)
+        {
+            //2
+            Gena();
+            int itemCount = Convert.ToInt32(text1.Text);
+            int kol = 0;
+            int a = itemCount - 1;
+            for (i = 1; i < a; i++)
+            {
+                if (((int)myAL[i] > (int)myAL[i - 1]) && ((int)myAL[i] > (int)myAL[i + 1]))
+                {
+                    kol++;
+                }
+            }
+            if ((int)myAL[0] < (int)myAL[1] && (int)myAL[0] < (int)myAL[itemCount - 1])
+                kol++;
+            if ((int)myAL[itemCount - 1] < (int)myAL[0] && (int)myAL[itemCount - 1] < (int)myAL[itemCount - 2])
+                kol++;
+            list1.Items.Add("Дан массив из K чисел.\n Сколько элементов массива меньше своих «соседей»,\n т.е. предыдущего и последующего. Первый\n и последний элементы массива считаются соседними,\n т.е. массив представляет из себя кольцевой список.");
+            list1.Items.Add("Ответ:" + kol);
+        }
     }
 }

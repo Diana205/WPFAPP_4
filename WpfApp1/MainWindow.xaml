@@ -18,8 +18,9 @@
         <Label Content="Количество элементов" HorizontalAlignment="Left" Margin="38,20,0,0" VerticalAlignment="Top" FontSize="16"/>
         <Label Content="Результат" HorizontalAlignment="Left" Margin="244,32,0,0" VerticalAlignment="Top" FontSize="18"/>
         <ListBox Name="list1" HorizontalAlignment="Left" Height="384" Margin="216,79,0,0" VerticalAlignment="Top" Width="333"/>
-        <TextBox Name="text1" HorizontalAlignment="Left" Height="23" Margin="38,50,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="133" TextChanged="text1_TextChanged_1"/>
+        <TextBox Name="text1" HorizontalAlignment="Left" Height="23" Margin="38,50,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="133"/>
         <Button x:Name="kn_1" Content="№1" HorizontalAlignment="Left" Height="38" Margin="216,508,0,0" VerticalAlignment="Top" Width="124" Click="Button_Click_4" />
         <Button Content="Информация" HorizontalAlignment="Left" Height="29" Margin="38,265,0,0" VerticalAlignment="Top" Width="133" Click="Button_Click_10"/>
+        <Button x:Name="kn_2" Content="№2" HorizontalAlignment="Left" Height="38" Margin="216,589,0,0" VerticalAlignment="Top" Width="124" Click="Button_Click_5" />
     </Grid>
 </Window>
