@@ -8,8 +8,7 @@
         Title="Window1" Height="197.947" Width="244.428">
     <Grid Margin="0,0,4.4,4">
         <Button Content="ОК" HorizontalAlignment="Left" Height="31" Margin="19,123,0,0" VerticalAlignment="Top" Width="88" Click="Button_Click_1" IsDefault="True"/>
-        <Button Content="Выход" HorizontalAlignment="Left" Height="31" Margin="124,123,0,0" VerticalAlignment="Top" Width="88" Click="Button_Click" IsCancel="True"/>
         <Label Content="Введите K" HorizontalAlignment="Left" Margin="55,22,0,0" VerticalAlignment="Top" FontSize="16"/>
-        <TextBox x:Name="text1" HorizontalAlignment="Left" Height="24" Margin="34,59,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="178" TextChanged="text1_TextChanged"/>
+        <TextBox x:Name="text1" HorizontalAlignment="Left" Height="24" Margin="34,59,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="178" />
     </Grid>
 </Window>

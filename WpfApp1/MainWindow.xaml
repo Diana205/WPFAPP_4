@@ -26,5 +26,6 @@
         <Button x:Name="kn_6" Content="№6" HorizontalAlignment="Left" Height="38" Margin="194,583,0,0" VerticalAlignment="Top" Width="124" Click="kn_6_Click"/>
         <Button x:Name="kn_7" Content="№7" HorizontalAlignment="Left" Height="38" Margin="359,502,0,0" VerticalAlignment="Top" Width="124" Click="kn_7_Click"/>
         <Button x:Name="kn_8" Content="№8" HorizontalAlignment="Left" Height="38" Margin="359,589,0,0" VerticalAlignment="Top" Width="124" Click="kn_8_Click"/>
+        <Button x:Name="kn_9" Content="№9" HorizontalAlignment="Left" Height="38" Margin="526,502,0,0" VerticalAlignment="Top" Width="124" Click="kn_9_Click"/>
     </Grid>
 </Window>

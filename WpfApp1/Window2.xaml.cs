@@ -15,22 +15,23 @@ using System.Windows.Shapes;
 namespace WpfApp1
 {
     /// <summary>
-    /// Логика взаимодействия для Window1.xaml
+    /// Логика взаимодействия для Window2.xaml
     /// </summary>
-    public partial class Window1 : Window
+    public partial class Window2 : Window
     {
-        public Window1()
+        public Window2()
         {
             InitializeComponent();
         }
-        public int K;
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        public int x,x1;
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-          K = Convert.ToInt32(text1.Text);
-            Close();
+           
             try
             {
-                Convert.ToInt32(text1.Text);
+            x = Convert.ToInt32(text2.Text);
+            x1 = Convert.ToInt32(text2.Text);
+                Close();
             }
             catch
             {
@@ -38,6 +39,6 @@ namespace WpfApp1
             }
         }
 
-        
+
     }
 }
