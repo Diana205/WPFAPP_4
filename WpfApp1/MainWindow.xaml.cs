@@ -32,10 +32,10 @@ namespace WpfApp1
         int number;
         int i;
         ArrayList myAL = new ArrayList();
-       
+
         void Gena()
         {
-        try
+            try
             {
                 int itemCount = Convert.ToInt32(text1.Text);
                 if (itemCount > 0)
@@ -61,7 +61,7 @@ namespace WpfApp1
             {
                 MessageBox.Show("Введите число!!!");
             }
-}
+        }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Gena();
@@ -275,5 +275,45 @@ namespace WpfApp1
                 list1.Items.Add(myAL[i]);
             }
         }
+
+        private void kn_16_Click(object sender, RoutedEventArgs e)
+        {
+            //16
+            Window2 J = new Window2();
+            J.ShowDialog();
+            int ch = J.R;
+            myAL.Clear();
+            valueList.Clear();
+            try
+            {
+                int itemCount = Convert.ToInt32(text1.Text);
+                if (itemCount > 0)
+                {
+                    Random rnd1 = new Random();
+                    list1.Items.Clear();
+                    myAL.Clear();
+                    for (i = 1; i <= itemCount; i++)
+                    {
+                   
+                        number = rnd1.Next(1,200);
+                        ch -= number;
+                        myAL.Add(ch);
+                        list1.Items.Add(ch);
+                    }
+                    valueList.Clear();
+                    for (int i = 0; i < itemCount; i++)
+                    {
+                        valueList.Add(new KeyValuePair<string, int>("", (int)myAL[i]));
+                    }
+                }
+                else MessageBox.Show("Введите целое число больше нуля!");
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Введите число!!!");
+            }
+        }
+
+        
     }
 }

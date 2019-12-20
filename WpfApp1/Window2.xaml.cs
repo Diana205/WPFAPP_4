@@ -15,21 +15,20 @@ using System.Windows.Shapes;
 namespace WpfApp1
 {
     /// <summary>
-    /// Логика взаимодействия для Window1.xaml
+    /// Логика взаимодействия для Window2.xaml
     /// </summary>
-    public partial class Window1 : Window
+    public partial class Window2 : Window
     {
-        public Window1()
+        public Window2()
         {
             InitializeComponent();
         }
-        public int K;
-        
-        private void kn_oke_Click(object sender, RoutedEventArgs e)
+        public int R;
+        private void kn_ok_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                K = Convert.ToInt32(text_ok.Text);
+                R = Convert.ToInt32(text_2.Text);
                 Close();
             }
             catch
