@@ -23,7 +23,7 @@ namespace WpfApp1
         {
             InitializeComponent();
         }
-        public int K;
+        public int K, K1;
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
@@ -31,7 +31,7 @@ namespace WpfApp1
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-          K = Convert.ToInt32(text_ok.Text);
+          K = Convert.ToInt32(text_L.Text);
             Close();
         }
 
@@ -39,8 +39,7 @@ namespace WpfApp1
         {
             try
             {
-                Convert.ToInt32(text_ok.Text);
-               // (this.Parent as MainWindow).key = K;
+                Convert.ToInt32(text_L.Text);
             }
             catch
             {

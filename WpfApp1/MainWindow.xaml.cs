@@ -241,6 +241,7 @@ namespace WpfApp1
                         myAL[i + 1] = t;
                     }
                 }
+            }
                 list1.Items.Add("Измененный массив");
                 for (i = 0; i < itemCount; i++)
                     list1.Items.Add(myAL[i]);
@@ -250,7 +251,7 @@ namespace WpfApp1
                 {
                     valueList.Add(new KeyValuePair<string, int>("", (int)myAL[i]));
                 }
-            }
         }
+
     }
 }
