@@ -279,11 +279,11 @@ namespace WpfApp1
         private void kn_16_Click(object sender, RoutedEventArgs e)
         {
             //16
+            myAL.Clear();
+            valueList.Clear();
             Window2 J = new Window2();
             J.ShowDialog();
             int ch = J.R;
-            myAL.Clear();
-            valueList.Clear();
             try
             {
                 int itemCount = Convert.ToInt32(text1.Text);
@@ -294,8 +294,7 @@ namespace WpfApp1
                     myAL.Clear();
                     for (i = 1; i <= itemCount; i++)
                     {
-                   
-                        number = rnd1.Next(1,200);
+                        number = rnd1.Next(1,100);
                         ch -= number;
                         myAL.Add(ch);
                         list1.Items.Add(ch);
