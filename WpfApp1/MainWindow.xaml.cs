@@ -351,5 +351,56 @@ namespace WpfApp1
                 list1.Items.Add(myAL[i]);
             }
         }
+
+        private void kn_10_Click(object sender, RoutedEventArgs e)
+        {
+            //10
+            list1.Items.Clear();
+            valueList.Clear();
+            Window3 P = new Window3();
+            P.ShowDialog();
+            int k4 = P.x3,t=0;
+            Gena();
+            int itemCount = Convert.ToInt32(text1.Text);
+            int sum = 0;
+            Window2 O = new Window2();
+            O.ShowDialog();
+            int L = O.x, Z = O.x1;
+
+            while(t<k4)
+            {
+                for (i = 0; i < itemCount; i++)
+                {
+                    sum += (int)myAL[i];
+                }
+                float sr = 0, otkl = 0, sum_otkl = 0, sr_otkl = 0;
+                sr = (float)sum / (float)itemCount;
+                list1.Items.Add("Среднее значение: " + sr);
+
+                for (i = 0; i < itemCount; i++)
+                {
+                    otkl = (int)myAL[i] - sr;
+                    sum_otkl += otkl;
+                }
+                sr_otkl = (float)sum_otkl / (float)itemCount;
+                for (i = 0; i < itemCount; i++)
+                {
+                    otkl = (int)myAL[i] - sr;
+                    if (otkl > (sr_otkl / 100) * L)
+                    {
+                        myAL[i] = Z;
+                    }
+                    list1.Items.Add(myAL[i]);
+                }
+                list1.Items.Add("-------------------------------");
+                MessageBox.Show("Гистограмма изменится");
+                valueList.Clear();
+                for (int i = 0; i < itemCount; i++)
+                {
+                    valueList.Add(new KeyValuePair<string, int>("", (int)myAL[i]));
+                }
+                t++;
+            }
+        }
     }
 }
