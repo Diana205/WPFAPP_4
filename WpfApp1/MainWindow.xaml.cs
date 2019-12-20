@@ -124,7 +124,8 @@ namespace WpfApp1
             this.Close();
         }
 
-        private void Button_Click_4(object sender, RoutedEventArgs e)
+
+        private void kn_1_Click(object sender, RoutedEventArgs e)
         {
             //1
             try
@@ -162,7 +163,7 @@ namespace WpfApp1
             r.ShowDialog();
         }
 
-        private void Button_Click_5(object sender, RoutedEventArgs e)
+        private void kn_2_Click(object sender, RoutedEventArgs e)
         {
             //2
             Gena();
@@ -226,6 +227,7 @@ namespace WpfApp1
 
         private void kn_6_Click(object sender, RoutedEventArgs e)
         {
+        //6
             int itemCount = Convert.ToInt32(text1.Text);
             list1.Items.Add("Дан массив из K чисел. Выведите к исходному \nмассиву вместо значений элементов их отклонение \nот среднего значения элементов массива.");
             int sum = 0;
@@ -275,5 +277,44 @@ namespace WpfApp1
                 list1.Items.Add(myAL[i]);
             }
         }
+
+        private void kn_8_Click(object sender, RoutedEventArgs e)
+        {
+            //8
+            Gena();
+            list1.Items.Add("Дан массив из K чисел. Найдите среднее \nзначение элементов массива. Замените все \nэлементы массива, отклонение от среднего \nзначения которых больше L процентов от среднего \nотклонения всех элементов, на среднее значение.");
+
+            int itemCount = Convert.ToInt32(text1.Text);
+            int sum = 0;
+            for (i = 0; i < itemCount; i++)
+            {
+                sum += (int)myAL[i];
+            }
+            float sr = 0, otkl = 0, sum_otkl = 0, sr_otkl = 0;
+            sr = (float)sum / (float)itemCount;
+            list1.Items.Add("Среднее значение: " + sr);
+
+            Window1 f = new Window1();
+            f.ShowDialog();
+            int L = f.K;
+
+            for (i = 0; i < itemCount; i++)
+            {
+                otkl = (int)myAL[i] - sr;
+                sum_otkl += otkl;
+            }
+            sr_otkl = (float)sum_otkl / (float)itemCount;
+            for (i = 0; i < itemCount; i++)
+            {
+                otkl = (int)myAL[i] - sr;
+                if (otkl > (sr_otkl / 100) * L)
+                {
+                    myAL[i] = sr;
+                }
+                list1.Items.Add(myAL[i]);
+            }
+        }
+
+        
     }
 }

@@ -19,12 +19,12 @@
         <Label Content="Результат" HorizontalAlignment="Left" Margin="244,32,0,0" VerticalAlignment="Top" FontSize="18"/>
         <ListBox Name="list1" HorizontalAlignment="Left" Height="384" Margin="216,79,0,0" VerticalAlignment="Top" Width="333"/>
         <TextBox Name="text1" HorizontalAlignment="Left" Height="23" Margin="38,50,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="133"/>
-        <Button x:Name="kn_1" Content="№1" HorizontalAlignment="Left" Height="38" Margin="83,503,0,0" VerticalAlignment="Top" Width="124" Click="Button_Click_4" />
+        <Button x:Name="kn_1" Content="№1" HorizontalAlignment="Left" Height="38" Margin="33,502,0,0" VerticalAlignment="Top" Width="124" Click="kn_1_Click" />
         <Button Content="Информация" HorizontalAlignment="Left" Height="29" Margin="38,265,0,0" VerticalAlignment="Top" Width="133" Click="Button_Click_10"/>
-        <Button x:Name="kn_2" Content="№2" HorizontalAlignment="Left" Height="38" Margin="83,584,0,0" VerticalAlignment="Top" Width="124" Click="Button_Click_5" />
-        <Button x:Name="kn_3" Content="№3" HorizontalAlignment="Left" Height="38" Margin="244,503,0,0" VerticalAlignment="Top" Width="124" Click="kn_3_Click" />
-        <Button x:Name="kn_4" Content="№4" HorizontalAlignment="Left" Height="38" Margin="244,589,0,0" VerticalAlignment="Top" Width="124" Click="kn_4_Click"/>
-        <Button x:Name="kn_6" Content="№6" HorizontalAlignment="Left" Height="38" Margin="425,503,0,0" VerticalAlignment="Top" Width="124" Click="kn_6_Click"/>
-        <Button x:Name="kn_7" Content="№7" HorizontalAlignment="Left" Height="38" Margin="425,589,0,0" VerticalAlignment="Top" Width="124" Click="kn_7_Click"/>
+        <Button x:Name="kn_2" Content="№2" HorizontalAlignment="Left" Height="38" Margin="33,583,0,0" VerticalAlignment="Top" Width="124" Click="kn_2_Click" />
+        <Button x:Name="kn_3" Content="№3" HorizontalAlignment="Left" Height="38" Margin="194,502,0,0" VerticalAlignment="Top" Width="124" Click="kn_3_Click" />
+        <Button x:Name="kn_6" Content="№6" HorizontalAlignment="Left" Height="38" Margin="194,583,0,0" VerticalAlignment="Top" Width="124" Click="kn_6_Click"/>
+        <Button x:Name="kn_7" Content="№7" HorizontalAlignment="Left" Height="38" Margin="359,502,0,0" VerticalAlignment="Top" Width="124" Click="kn_7_Click"/>
+        <Button x:Name="kn_8" Content="№8" HorizontalAlignment="Left" Height="38" Margin="359,589,0,0" VerticalAlignment="Top" Width="124" Click="kn_8_Click"/>
     </Grid>
 </Window>

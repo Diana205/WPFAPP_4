@@ -31,15 +31,15 @@ namespace WpfApp1
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-          K = Convert.ToInt32(text_ok.Text);
+          K = Convert.ToInt32(text1.Text);
             Close();
         }
 
-        private void text_ok_TextChanged(object sender, TextChangedEventArgs e)
+        private void text1_TextChanged(object sender, TextChangedEventArgs e)
         {
             try
             {
-                Convert.ToInt32(text_ok.Text);
+                Convert.ToInt32(text1.Text);
                // (this.Parent as MainWindow).key = K;
             }
             catch
