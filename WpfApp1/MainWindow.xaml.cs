@@ -242,5 +242,38 @@ namespace WpfApp1
                 list1.Items.Add("\t" + myAL[i] + "\t-->\t" + otkl);
             }
         }
+
+        private void kn_7_Click(object sender, RoutedEventArgs e)
+        {
+        //7
+            Gena();
+            list1.Items.Add("Дан массив из K чисел. Найдите среднее\n значение элементов массива. Замените \nвсе элементы массива, отклонение от среднего \nзначения которых больше половины среднего \nотклонения всех элементов, на среднее значение.");
+
+            int itemCount = Convert.ToInt32(text1.Text);
+            int sum = 0;
+            for (i = 0; i < itemCount; i++)
+            {
+                sum += (int)myAL[i];
+            }
+            float sr = 0, otkl = 0, sum_otkl = 0, sr_otkl = 0;
+            sr = (float)sum / (float)itemCount;
+            list1.Items.Add("Среднее значение: " + sr);
+
+            for (i = 0; i < itemCount; i++)
+            {
+                otkl = (int)myAL[i] - sr;
+                sum_otkl += otkl;
+            }
+            sr_otkl = (float)sum_otkl / (float)itemCount;
+            for (i = 0; i < itemCount; i++)
+            {
+                otkl = (int)myAL[i] - sr;
+                if (otkl > (sr_otkl / 2))
+                {
+                    myAL[i] = sr;
+                }
+                list1.Items.Add(myAL[i]);
+            }
+        }
     }
 }
