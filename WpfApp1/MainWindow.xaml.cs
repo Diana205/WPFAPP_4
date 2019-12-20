@@ -224,6 +224,23 @@ namespace WpfApp1
             list1.Items.Add("Ответ: " + (j + 1));
         }
 
-       
+        private void kn_6_Click(object sender, RoutedEventArgs e)
+        {
+            int itemCount = Convert.ToInt32(text1.Text);
+            list1.Items.Add("Дан массив из K чисел. Выведите к исходному \nмассиву вместо значений элементов их отклонение \nот среднего значения элементов массива.");
+            int sum = 0;
+            for (i = 0; i < itemCount; i++)
+            {
+                sum += (int)myAL[i];
+            }
+            float sr = 0, otkl = 0;
+
+            sr = (float)sum / (float)itemCount;
+            for (i = 0; i < itemCount; i++)
+            {
+                otkl = (int)myAL[i] - sr;
+                list1.Items.Add("\t" + myAL[i] + "\t-->\t" + otkl);
+            }
+        }
     }
 }
